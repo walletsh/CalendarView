@@ -75,6 +75,9 @@ extension CalendarView {
         public var cellTextColorDefault      = UIColor.gray
         public var cellBorderColor           = UIColor.clear
         public var cellBorderWidth           = CGFloat(0.0)
+        public var cellBorderColorToday      = UIColor.clear
+        public var cellBorderWidthToday      = CGFloat(0.0)
+
         public var cellFont                  = UIFont.systemFont(ofSize: 17)
         
         //Today Style
