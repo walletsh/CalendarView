@@ -112,11 +112,13 @@ open class CalendarDayCell: UICollectionViewCell {
                 self.bgView.layer.borderWidth = style.cellSelectedBorderWidth
                 self.bgView.backgroundColor = style.cellSelectedColor
             case false:
-                self.bgView.layer.borderColor = style.cellBorderColor.cgColor
-                self.bgView.layer.borderWidth = style.cellBorderWidth
                 if self.isToday {
                     self.bgView.backgroundColor = style.cellColorToday
+                    self.bgView.layer.borderColor = style.cellBorderColorToday.cgColor
+                    self.bgView.layer.borderWidth = style.cellBorderWidthToday
                 } else {
+                    self.bgView.layer.borderColor = style.cellBorderColor.cgColor
+                    self.bgView.layer.borderWidth = style.cellBorderWidth
                     self.bgView.backgroundColor = style.cellColorDefault
                 }
             }
