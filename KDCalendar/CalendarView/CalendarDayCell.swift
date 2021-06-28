@@ -27,7 +27,11 @@ import UIKit
 
 open class CalendarDayCell: UICollectionViewCell {
     
-    var style: CalendarView.Style = CalendarView.Style.Default
+    var style: CalendarView.Style = CalendarView.Style.Default {
+        didSet {
+            textLabel.font = style.cellFont
+        }
+    }
     
     override open var description: String {
         let dayString = self.textLabel.text ?? " "
@@ -53,6 +57,8 @@ open class CalendarDayCell: UICollectionViewCell {
     }
     
     func updateTextColor() {
+        textLabel.font = style.cellFont
+
         if isSelected {
             self.textLabel.textColor = style.cellSelectedTextColor
         }
