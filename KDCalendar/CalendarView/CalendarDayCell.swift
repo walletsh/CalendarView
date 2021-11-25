@@ -59,7 +59,7 @@ open class CalendarDayCell: UICollectionViewCell {
     func updateTextColor() {
         textLabel.font = style.cellFont
 
-        if isSelected {
+        if isCellSelected {
             self.textLabel.textColor = style.cellSelectedTextColor
         }
         else if isToday {
@@ -110,9 +110,9 @@ open class CalendarDayCell: UICollectionViewCell {
         }
     }
     
-    override open var isSelected : Bool {
+    open var isCellSelected : Bool = false {
         didSet {
-            switch isSelected {
+            switch isCellSelected {
             case true:
                 self.bgView.layer.borderColor = style.cellSelectedBorderColor.cgColor
                 self.bgView.layer.borderWidth = style.cellSelectedBorderWidth
@@ -159,10 +159,10 @@ open class CalendarDayCell: UICollectionViewCell {
         
         super.init(frame: frame)
         
-        self.addSubview(self.bgView)
-        self.addSubview(self.textLabel)
+        contentView.addSubview(self.bgView)
+        contentView.addSubview(self.textLabel)
         
-        self.addSubview(self.dotsView)
+        contentView.addSubview(self.dotsView)
         
     }
     
